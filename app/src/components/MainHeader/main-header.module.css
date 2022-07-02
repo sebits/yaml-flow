@@ -1,0 +1,19 @@
+.nav {
+    @apply flex justify-between w-1/2 h-16 mx-auto;
+}
+
+.logo {
+    @apply bg-gray-500;
+}
+
+.navList {
+    @apply flex items-center justify-between;
+}
+
+.navList li {
+    @apply mr-4;
+}
+
+.navList li:last-child {
+    @apply mr-0;
+}

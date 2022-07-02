@@ -1,6 +1,6 @@
 import Head from 'next/head';
-import MainFooter from '../../components/main-footer';
-import MainHeader from '../../components/main-header';
+import MainFooter from '../../components/MainFooter/MainFooter';
+import MainHeader from '../../components/MainHeader/MainHeader';
 import styles from './main.module.css'
 
 interface Props {
