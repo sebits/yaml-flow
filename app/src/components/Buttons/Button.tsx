@@ -1,14 +1,26 @@
 import React from 'react'
-import styles from './Button.module.scss'
+import classNames from 'classnames';
+
+import styles from './Button.module.css'
 
 interface Props {
+    /**
+     * The text of the button
+     * @type {string}
+     */
     text: String,
-    type: 'primary' | 'secondary'
+    /**
+     * The type of the button
+     * @type {string}
+     * @default 'primary'
+     */
+    type?: 'primary' | 'secondary'
 }
 
-const Button = ({ text }: Props): React.ReactElement => {
+const Button = ({ text, type = 'primary' }: Props): React.ReactElement => {
+    const buttonType = type === 'primary' ? styles.primary : styles.secondary;
     return (
-        <button className={styles.button}>{text}</button>
+        <button className={classNames(styles.button, buttonType)}>{text}</button>
     )
 }
 

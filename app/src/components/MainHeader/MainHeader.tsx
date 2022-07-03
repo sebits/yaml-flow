@@ -12,7 +12,7 @@ export default function MainHeader() {
         <li>About</li>
         <li>Contact</li>
       </ul>
-      <Button text={'Sign Up'} type={'primary'} />
+      <Button text={'Sign Up'} type={'secondary'} />
     </nav>
   )
 }
