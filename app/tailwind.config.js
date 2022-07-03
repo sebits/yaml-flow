@@ -9,6 +9,11 @@ module.exports = {
           500: "#6D7076",
           50: "#F7FAFC"
         }
+      },
+      fontFamily: {
+        'poppins': ['Poppins', 'sans-serif'],
+        'work-sans': ['Work Sans', 'sans-serif'],
+        'clash-display': ['ClashDisplay-Variable', 'sans-serif']
       }
     }
   },
