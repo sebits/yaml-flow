@@ -9,5 +9,5 @@
 }
 
 body {
-    @apply text-white;
+    @apply text-white font-work-sans;
 }
