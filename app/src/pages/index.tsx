@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import { ReactNode } from "react";
-import MainLayout from "../layouts/main/main";
+import MainLayout from "../layouts/MainLayout/MainLayout";
 import { trpc } from "../utils/trpc";
 
 export default function Home() {

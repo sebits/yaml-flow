@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './main-header.module.css'
+import styles from './MainHeader.module.css'
 
 export default function MainHeader() {
   return (
