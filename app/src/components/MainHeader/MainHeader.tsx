@@ -4,13 +4,13 @@ import styles from './main-header.module.css'
 export default function MainHeader() {
   return (
     <nav className={styles.nav}>
-      <div className={styles.logo}>LOGO</div>
+      <div className={styles.logo}>YAML<strong>flow</strong></div>
       <ul className={styles.navList}>
-        <li>Hello</li>
-        <li>Hello</li>
-        <li>Hello</li>
-        <li>Hello</li>
+        <li>Demo</li>
+        <li>About</li>
+        <li>Contact</li>
       </ul>
+      <button className={styles.secondaryButton}>Sign Up</button>
     </nav>
   )
 }

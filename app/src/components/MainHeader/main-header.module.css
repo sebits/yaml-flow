@@ -1,9 +1,9 @@
 .nav {
-    @apply flex justify-between w-1/2 h-16 mx-auto;
+    @apply flex justify-between items-center h-16 mx-5;
 }
 
 .logo {
-    @apply bg-gray-500;
+    @apply p-2 text-xl tracking-normal font-clash-display;
 }
 
 .navList {
@@ -11,9 +11,13 @@
 }
 
 .navList li {
-    @apply mr-4;
+    @apply mr-4 p-2;
 }
 
 .navList li:last-child {
     @apply mr-0;
+}
+
+.secondaryButton {
+    @apply p-2 bg-gray-50 backdrop-blur-3xl bg-opacity-10 rounded-md;
 }
