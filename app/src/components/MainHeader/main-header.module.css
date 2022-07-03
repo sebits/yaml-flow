@@ -1,9 +1,13 @@
 .nav {
-    @apply flex justify-between items-center h-16 mx-5;
+    @apply flex justify-between items-center h-20 mx-5 lg:mx-8 md:mx-6;
 }
 
 .logo {
-    @apply p-2 text-xl tracking-normal font-clash-display;
+    @apply p-2 text-2xl tracking-normal font-clash-display;
+}
+
+.logo strong {
+    @apply font-semibold;
 }
 
 .navList {
@@ -19,5 +23,5 @@
 }
 
 .secondaryButton {
-    @apply p-2 bg-gray-50 backdrop-blur-3xl bg-opacity-10 rounded-md;
+    @apply p-2 px-4 bg-gray-50 backdrop-blur-3xl bg-opacity-10 rounded-md;
 }
