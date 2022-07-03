@@ -1,4 +1,6 @@
 import React from 'react'
+
+import Button from '../Buttons/Button'
 import styles from './MainHeader.module.css'
 
 export default function MainHeader() {
@@ -10,7 +12,7 @@ export default function MainHeader() {
         <li>About</li>
         <li>Contact</li>
       </ul>
-      <button className={styles.secondaryButton}>Sign Up</button>
+      <Button text={'Sign Up'} type={'primary'} />
     </nav>
   )
 }

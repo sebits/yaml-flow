@@ -1,0 +1,6 @@
+@tailwind components;
+
+
+.button {
+    @apply p-2 px-4 rounded-md bg-gray-50 backdrop-blur-3xl bg-opacity-10;
+}
