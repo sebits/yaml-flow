@@ -3,10 +3,11 @@ import { withTRPC } from "@trpc/next";
 import type { AppRouter } from "../server/router";
 import superjson from "superjson";
 import { SessionProvider } from "next-auth/react";
-import "../styles/globals.css";
 import { ReactElement, ReactNode } from "react";
 import { AppProps } from "next/app";
 import { NextPage } from "next";
+import "../styles/globals.css";
+import "../styles/fonts.css";
 
 type NextPageWithLayout = NextPage & {
   getLayout?: (page: ReactElement) => ReactNode;
