@@ -1,5 +1,12 @@
 {
     "editor.formatOnSave": true,
-    "css.lint.unknownProperties": "ignore",
-    "css.lint.unknownAtRules": "ignore"
+    "css.lint.unknownProperties": "warning",
+    "css.lint.unknownAtRules": "ignore",
+    "[css]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "heybourn.headwind"
+    },
+    "less.lint.unknownAtRules": "ignore",
+    "scss.lint.unknownAtRules": "ignore",
+    "css.lint.unknownVendorSpecificProperties": "warning"
 }
