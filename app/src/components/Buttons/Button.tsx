@@ -3,7 +3,7 @@ import classNames from 'classnames';
 
 import styles from './Button.module.css'
 
-interface Props {
+interface ButtonProps {
     /**
      * The text of the button
      * @type {string}
@@ -17,10 +17,14 @@ interface Props {
     type?: 'primary' | 'secondary'
 }
 
-const Button = ({ text, type = 'primary' }: Props): React.ReactElement => {
+const Button = ({ text, type = 'primary' }: ButtonProps): React.ReactElement => {
+
     const buttonType = type === 'primary' ? styles.primary : styles.secondary;
     return (
-        <button className={classNames(styles.button, buttonType)}>{text}</button>
+        <button
+            className={classNames(styles.button, buttonType)}>
+            {text}
+        </button>
     )
 }
 
