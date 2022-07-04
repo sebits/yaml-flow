@@ -23,7 +23,7 @@ const DarkModeToggleButton = () => {
                 document.documentElement.classList.add(THEME_TYPES.THEME_DARK);
                 setTheme(THEME_TYPES.THEME_DARK);
             } else {
-                document.documentElement.classList.remove(THEME_TYPES.THEME_DARK);
+                document.documentElement.classList.remove(THEME_TYPES.THEME_LIGHT);
                 setTheme(THEME_TYPES.THEME_LIGHT);
             }
         }
@@ -38,9 +38,9 @@ const DarkModeToggleButton = () => {
 
     return (
         theme === THEME_TYPES.THEME_LIGHT ? (
-            <SunIcon className='w-10 h-10 p-2 hover:cursor-pointer' onClick={handleClick} />
-        ) : (
             <MoonIcon className='w-10 h-10 p-2 hover:cursor-pointer' onClick={handleClick} />
+        ) : (
+            <SunIcon className='w-10 h-10 p-2 hover:cursor-pointer' onClick={handleClick} />
         )
     )
 }
