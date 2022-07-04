@@ -1,9 +1,8 @@
 import { useState, useEffect } from 'react'
-import classNames from 'classnames';
+import { MoonIcon, SunIcon } from '@heroicons/react/outline'
 
 import { applyThemePreference } from '../../utils/theme';
 import { THEME_TYPES } from '../../constants';
-import styles from './ThemeToggleButton.module.css'
 
 const DarkModeToggleButton = () => {
     /**
@@ -16,7 +15,6 @@ const DarkModeToggleButton = () => {
     useEffect(() => {
         const existingPreference = localStorage.getItem("theme");
         if (existingPreference) {
-            applyThemePreference(existingPreference);
             setTheme(existingPreference);
         } else {
             if (localStorage.theme === THEME_TYPES.THEME_DARK
@@ -24,11 +22,9 @@ const DarkModeToggleButton = () => {
                     && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
                 document.documentElement.classList.add(THEME_TYPES.THEME_DARK);
                 setTheme(THEME_TYPES.THEME_DARK);
-                applyThemePreference(THEME_TYPES.THEME_DARK);
             } else {
                 document.documentElement.classList.remove(THEME_TYPES.THEME_DARK);
                 setTheme(THEME_TYPES.THEME_LIGHT);
-                applyThemePreference(THEME_TYPES.THEME_LIGHT);
             }
         }
     }, []);
@@ -41,11 +37,11 @@ const DarkModeToggleButton = () => {
     }
 
     return (
-        <button
-            className={classNames(styles.button, theme === THEME_TYPES.THEME_DARK ? styles.dark : styles.light)}
-            onClick={handleClick}>
-            Toggle Dark Mode
-        </button>
+        theme === THEME_TYPES.THEME_LIGHT ? (
+            <SunIcon className='w-10 h-10 p-2 hover:cursor-pointer' onClick={handleClick} />
+        ) : (
+            <MoonIcon className='w-10 h-10 p-2 hover:cursor-pointer' onClick={handleClick} />
+        )
     )
 }
 

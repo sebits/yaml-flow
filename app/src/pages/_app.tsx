@@ -3,11 +3,13 @@ import { withTRPC } from "@trpc/next";
 import type { AppRouter } from "../server/router";
 import superjson from "superjson";
 import { SessionProvider } from "next-auth/react";
-import { ReactElement, ReactNode } from "react";
+import { ReactElement, ReactNode, useEffect } from "react";
 import { AppProps } from "next/app";
 import { NextPage } from "next";
 import "../styles/globals.css";
 import "../styles/fonts.css";
+import { applyThemePreference } from "../utils/theme";
+import { THEME_TYPES } from "../constants";
 
 type NextPageWithLayout = NextPage & {
   getLayout?: (page: ReactElement) => ReactNode;
@@ -21,6 +23,24 @@ const MyApp = ({
   Component,
   pageProps: { session, ...pageProps },
 }: AppPropsWithLayout) => {
+
+  useEffect(() => {
+    const existingPreference = localStorage.getItem("theme");
+    if (existingPreference) {
+      applyThemePreference(existingPreference);
+    } else {
+      if (localStorage.theme === THEME_TYPES.THEME_DARK
+        || (!('theme' in localStorage)
+          && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add(THEME_TYPES.THEME_DARK);
+        applyThemePreference(THEME_TYPES.THEME_DARK);
+      } else {
+        document.documentElement.classList.remove(THEME_TYPES.THEME_DARK);
+        applyThemePreference(THEME_TYPES.THEME_LIGHT);
+      }
+    }
+  }, []);
+
   const getLayout = Component.getLayout ?? ((page) => page);
   const layout = getLayout(<Component {...pageProps} />);
 
