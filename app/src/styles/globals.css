@@ -4,6 +4,6 @@
 
 
 body {
-    @apply text-black bg-gray-200 dark:bg-gray-900 dark:text-white font-work-sans;
+    @apply min-h-screen text-gray-900 bg-gray-100 bg-center bg-no-repeat bg-cover dark:text-white font-work-sans dark:bg-dark-mode;
 }
 

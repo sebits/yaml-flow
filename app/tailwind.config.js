@@ -15,6 +15,9 @@ module.exports = {
         'poppins': ['Poppins', 'sans-serif'],
         'work-sans': ['Work Sans', 'sans-serif'],
         'clash-display': ['ClashDisplay-Variable', 'sans-serif']
+      },
+      backgroundImage: {
+        'dark-mode': "url('/img/dark-mode-bg.svg')"
       }
     }
   },

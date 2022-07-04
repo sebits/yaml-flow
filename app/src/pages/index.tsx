@@ -1,6 +1,10 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import { ReactNode } from "react";
+import Hero from "../components/Hero/Hero";
+import HeroButtonGroup from "../components/Hero/HeroButtonGroup";
+import HeroHeader from "../components/Hero/HeroHeader";
+import HeroTagline from "../components/Hero/HeroTagline";
 import MainLayout from "../layouts/MainLayout/MainLayout";
 import { trpc } from "../utils/trpc";
 
@@ -9,49 +13,11 @@ export default function Home() {
 
   return (
     <>
-      <div className="flex flex-col items-center justify-center w-1/2 min-h-screen mx-auto">
-        <h1 className="font-extrabold text-center text-7xl">
-          Create <span className="text-blue-500">T3</span> App
-        </h1>
-
-        <div className="w-fit">
-          <h3 className="mt-4 text-3xl">This Stack uses:-</h3>
-          <ul className="self-start text-xl underline list-disc">
-            <li>
-              <a href="https://nextjs.org" target="_blank" rel="noreferrer">
-                Next.js
-              </a>
-            </li>
-            <li>
-              <a href="https://trpc.io" target="_blank" rel="noreferrer">
-                tRPC
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://tailwindcss.com"
-                target="_blank"
-                rel="noreferrer"
-              >
-                TailwindCSS
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://typescriptlang.org"
-                target="_blank"
-                rel="noreferrer"
-              >
-                TypeScript
-              </a>
-            </li>
-          </ul>
-
-          <div className="py-6 text-2xl">
-            {hello.data ? <p>{hello.data.greeting}</p> : <p>Loading..</p>}
-          </div>
-        </div>
-      </div>
+      <Hero>
+        <HeroHeader primaryText="A Powerful Editor" secondaryText="for your CI/CD Pipelines!" />
+        <HeroTagline text="The days of manually writing YAML for your GitHub and GitLab CI/CD pipelines is over." />
+        <HeroButtonGroup primaryButtonText="Start for free" secondaryButtonText="Learn more" />
+      </Hero>
     </>
   );
 };

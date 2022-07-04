@@ -6,6 +6,7 @@ import { SessionProvider } from "next-auth/react";
 import { ReactElement, ReactNode, useEffect } from "react";
 import { AppProps } from "next/app";
 import { NextPage } from "next";
+
 import "../styles/globals.css";
 import "../styles/fonts.css";
 import { applyThemePreference } from "../utils/theme";
@@ -44,7 +45,13 @@ const MyApp = ({
   const getLayout = Component.getLayout ?? ((page) => page);
   const layout = getLayout(<Component {...pageProps} />);
 
-  return <SessionProvider session={session}>{layout}</SessionProvider>;
+  return (
+    <SessionProvider session={session}>
+      <div className="w-full h-full mx-auto">
+        {layout}
+      </div>
+    </SessionProvider>
+  );
 }
 
 const getBaseUrl = () => {
