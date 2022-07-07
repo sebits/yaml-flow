@@ -15,7 +15,7 @@ export default function Home() {
     <>
       <Hero>
         <HeroHeader primaryText="A Powerful Editor" secondaryText="for your CI/CD Pipelines!" />
-        <HeroTagline text="The days of manually writing YAML for your GitHub and GitLab CI/CD pipelines is over." />
+        <HeroTagline text="The days of manually writing YAML for your GitHub Actions are over." />
         <HeroButtonGroup primaryButtonText="Start for free" secondaryButtonText="Learn more" />
       </Hero>
     </>
